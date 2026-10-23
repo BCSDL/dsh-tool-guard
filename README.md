@@ -1,3 +1,5 @@
+> Windows installer fix 0.1.1: PowerShell scripts include an explicit UTF-8 BOM for Windows PowerShell 5.1 and PowerShell 7. Plugin runtime behavior is unchanged.
+
 # dsh-tool-guard
 
 通用工具指导和证据检查。注册 tool_context/tool_help，并通过 DSH 事件检查本轮真实工具结果、日期、截断、修改后重读、重复调用及旧记忆。不负责解析文件、图片评分或课程处理。没有 Python、GPU、端口、后台服务或课堂依赖。
