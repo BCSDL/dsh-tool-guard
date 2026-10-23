@@ -1,0 +1,44 @@
+{
+  "name": "dsh-tool-guard",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "lib",
+    "backend",
+    "scripts",
+    "skills",
+    "cordis.patch.yml",
+    "README.md",
+    "SHARED-SOURCES.json",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/schemastery": "^3.18.4",
+    "@deepseek-ai/dsh-tools": "^0.2.0-rc.1",
+    "@deepseek-ai/dsh-llm": "^0.2.0-rc.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "pack:check": "npm pack --dry-run --ignore-scripts"
+  },
+  "description": "通用工具指导和证据检查。注册 tool_context/tool_help，并通过 DSH 事件检查本轮真实工具结果、日期、截断、修改后重读、重复调用及旧记忆。不负责解析文件、图片评分或课程处理。没有 Python、GPU、端口、后台服务或课堂依赖。"
+}
